@@ -3,7 +3,7 @@ import UndrawBooks from '../assets/Undraw_Books.svg'
 
 const Landing = () => {
     return (
-        <section id="lannding">
+        <section id="landing">
             <header>
              <div className="header__container">
              <div className="header__description">
@@ -13,10 +13,10 @@ const Landing = () => {
             <button className="btn">Browse books</button>
             </a>
             </div>
-            </div>
             <figure className="header__img--wrapper">
             <img src={UndrawBooks} alt="" />
-            </figure>   
+            </figure>  
+            </div>             
             </header>
         </section>
     )
