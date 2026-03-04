@@ -60,11 +60,13 @@ return (
         harum necessitatibus quaerat nulla beatae neque provident!
     </p>
 </div>
-{bookExistsOnCart() ? (<button className="btn">Checkout</button>) 
+{bookExistsOnCart() ? (
+<a href={`/cart`} className="book__link">  
+<button className="btn">Checkout</button>
+</a>
+) 
 : (
-<button className="btn" onClick={() => addBookToCart(book)}>
-    Add to cart
-</button>   
+<button className="btn" onClick={() => addBookToCart(book)}>Add to cart</button>   
     )}
 </div>
 </div>
