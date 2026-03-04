@@ -26,15 +26,15 @@ const Cart = ({ cart }) => {
                                 <div className="cart__item">
                                 <div className="cart__book">
                                 <img 
-                                src="https://m.media-amazon.com/images/I/61mIq2iJUXL._AC_UF1000,1000_QL80_.jpg" 
+                                src= {book.url}
                                 className="cart__book--img" 
                                 alt="" />
                                 <div className="cart__book--info">
                                     <span className="cart__book--title">
-                                        Crack the Coding Interview
+                                        {book.title}
                                     </span>
                                     <span className="cart__book--price">
-                                        $10.00
+                                        ${(book.salePrice || book.originalPrice).toFixed(2)}
                                     </span>
                                     <button className="cart__book--remove">
                                         Remove
@@ -48,10 +48,8 @@ const Cart = ({ cart }) => {
                                 $10.00
                             </div>
                         </div>
-                              )  
-                            }                            
-                            )
-                        }                        
+                              );
+                            })}                        
                     </div>
                 </div>
                 <div className="total">
