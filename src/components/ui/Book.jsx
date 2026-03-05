@@ -1,22 +1,22 @@
 import React from "react";
 import Rating from "./rating";
 import Price from "./Price";
-
+import { Link } from "react-router-dom";
 
 
 const Book = ( { book } ) => {
     const rating = 4;    
     return (
        <div className="book">
-        <a href={`/books/${book.id}`}>
+        <Link to={`/books/${book.id}`}>
             <figure className="book__img--wrapper">
                 <img src={book.url} alt="" className="book_img" />
             </figure>
-        </a>
+        </Link>
         <div className="book__title">
-            <a href={`/books/${book.id}`} className="book__title--link">
+            <Link to={`/books/${book.id}`} className="book__title--link">
             {book.title}
-            </a>
+            </Link>
         </div>
         <Rating rating={book.rating} />       
        <Price salePrice={book.salePrice} originalPrice={book.originalPrice} />
