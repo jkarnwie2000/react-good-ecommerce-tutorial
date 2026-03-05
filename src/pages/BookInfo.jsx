@@ -62,9 +62,9 @@ return (
             </p>
         </div>
         {bookExistsOnCart() ? (
-        <a href={`/cart`} className="book__link">  
+        <Link to={`/cart`} className="book__link">  
         <button className="btn">Checkout</button>
-        </a>
+        </Link>
         ) 
         : (
         <button className="btn" onClick={() => addBookToCart(book)}>Add to cart</button>   
