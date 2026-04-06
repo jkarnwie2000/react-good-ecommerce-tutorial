@@ -2,17 +2,14 @@ import React from "react";
 import Logo from '../assets/Library.svg'
 import { Link } from "react-router-dom";
 
-
-
-
 const Footer = () => {
     return (
         <footer>
             <div className="container">
                 <div className="row row__column">
-                    <Link to="/" className="footer__log">
+                    <Link to="/" className="footer__logo">
                         <figure>
-                            <img src={Logo} className="footer__logo--img" alt="" />
+                            <img src="/assets/Library.svg" className="footer__logo--img" alt="" />
                         </figure>
                     </Link>
                     <div className="footer__list">

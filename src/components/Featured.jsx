@@ -4,8 +4,7 @@ import { books } from '../data.js'
 
 
 const Featured = () => {  
-     console.log()
-    
+        
      return (
         <section id="features">
             <div className="container">

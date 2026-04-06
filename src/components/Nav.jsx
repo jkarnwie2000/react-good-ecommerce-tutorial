@@ -9,7 +9,7 @@ const Nav = ({ numberOfItems }) => {
     }
 
     function closeMenu() {
-        document.body.remove("menu--open");
+        document.body.classList.remove("menu--open");
     }
     return (
         <nav>
@@ -36,9 +36,8 @@ const Nav = ({ numberOfItems }) => {
                         <FontAwesomeIcon icon="shopping-cart" />
                         </Link>
                         {
-                            numberOfItems > 0 && <span className="cart__length">{numberOfItems}</span>
-                        }
-                        
+                        numberOfItems > 0 && <span className="cart__length">{numberOfItems}</span>
+                        }                        
                     </li>
                 </ul>
                 <div className="menu__backdrop">
@@ -65,7 +64,7 @@ const Nav = ({ numberOfItems }) => {
                 </div>
             </div>
         </nav>
-    )
+    );
 }
 
 export default Nav
