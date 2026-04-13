@@ -297,7 +297,7 @@ HIGHLIGHTS
 
 #highlights:after,
 #highlights:before {
-  background: url("./assets/wave.svg");
+  
   content: "";
   position: absolute;
   width: 101vw;
@@ -388,6 +388,7 @@ FEATURES
   max-width: 250px;
   transition: all 300ms ease;
 }
+
 
 .book__img--skeleton {
   width: 100%;

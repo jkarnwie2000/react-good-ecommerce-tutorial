@@ -1,6 +1,5 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import LibraryLogo from '../assets/Library.svg'
 import { Link } from "react-router-dom";
 
 const Nav = ({ numberOfItems }) => {
@@ -14,8 +13,8 @@ const Nav = ({ numberOfItems }) => {
     return (
         <nav>
             <div className="nav__container">
-                <Link to="/">
-                    <img src={LibraryLogo} alt="" className="logo" />
+                <Link to="/assets/Library.svg">
+                    <img src="" alt="" className="logo" />
                 </Link>
                 <ul className="nav__links">
                     <li className="nav__list">
