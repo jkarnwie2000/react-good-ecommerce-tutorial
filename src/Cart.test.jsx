@@ -24,7 +24,29 @@ test("find the clickable remove button, click on it, and display the information
           element={
             <Cart
               books={mockBooks}
-              cart={[]}
+              cart={[{...mockBooks[0], quantity: 1 }]}
+              addToCart={jest.fn()}
+            />
+          }
+        />
+      </Routes>
+    </MemoryRouter>
+  );
+
+  expect(screen.getByText("Test Cart")).toBeInTheDocument();
+});
+
+
+test("find the clickable proceed to checkout button, click on it, and display the information", () => {
+  render(
+    <MemoryRouter initialEntries={["/cart"]}>
+      <Routes>
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              books={mockBooks}
+              cart={[{...mockBooks[0], quantity: 1 }]}
               addToCart={jest.fn()}
             />
           }
