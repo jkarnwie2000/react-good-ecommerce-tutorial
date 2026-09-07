@@ -3,16 +3,14 @@ import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import Nav from "./components/Nav";
 
-test("click the navigation button, and display the information", () => {
+test("display the navigation buttons", () => {
   render(
     <BrowserRouter>
       <Nav />
-    </BrowserRouter>
+    </BrowserRouter>,
   );
 
-  const button = screen.getByRole("button", {
-    name: /browse navbar/i,
-  });
+  const buttons = screen.getAllByRole("button");
 
-  expect(button).toBeInTheDocument();
+  expect(buttons).toHaveLength(2);
 });
