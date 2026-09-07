@@ -5,16 +5,16 @@ import Featured from "../components/Featured";
 import Discounted from "../components/Discounted";
 import Explore from "../components/Explore";
 
-const Home = () => {
-    return (
-     <>    
-    <Landing />
-    <Highlights />
-    <Featured />
-    <Discounted />
-    <Explore />
+const Home = ({ books }) => {
+  return (
+    <>
+      <Landing />
+      <Highlights />
+      <Featured books={books} />
+      <Discounted books={books} />
+      <Explore />
     </>
-    )
-}
+  );
+};
 
-export default Home
+export default Home;

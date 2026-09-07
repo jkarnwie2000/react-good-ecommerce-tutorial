@@ -1,26 +1,28 @@
 import React from "react";
 import Book from "./ui/Book";
-import { books } from '../data'
- 
-const Discounted = () => {
-return (
-<section id="recent">
-    <div className="container">
+import { books } from "../data";
+
+const Discounted = ({ books: providedBooks }) => {
+  const discountedBooks = providedBooks || books;
+
+  return (
+    <section id="recent">
+      <div className="container">
         <div className="row">
-            <h2 className="section__title">
-                Discount <span className="purple">Books</span>
-            </h2>
-            <div className="books">
-                {books
-                .filter(book => book.salePrice > 0)
-                .slice(0, 8)
-                .map((book) => (
-                <Book book={book} key={book.id}/>
-            ))}        
-            </div>
+          <h2 className="section__title">
+            Discount <span className="purple">Books</span>
+          </h2>
+          <div className="books">
+            {discountedBooks
+              .filter((book) => book.salePrice > 0)
+              .slice(0, 8)
+              .map((book) => (
+                <Book book={book} key={book.id} />
+              ))}
+          </div>
         </div>
-    </div>
-</section>
-);
-}
-export default Discounted
+      </div>
+    </section>
+  );
+};
+export default Discounted;

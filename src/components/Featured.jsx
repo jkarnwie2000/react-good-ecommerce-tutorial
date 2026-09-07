@@ -2,8 +2,8 @@ import React from "react";
 import Book from "./ui/Book";
 import { books } from '../data.js'
 
-
-const Featured = () => {  
+const Featured = ({ books: providedBooks }) => {
+    const featuredBooks = providedBooks || books;
         
      return (
         <section id="features">
@@ -13,7 +13,7 @@ const Featured = () => {
                         Featured <span className="purple">Books</span>
                     </h2>
                     <div className="books">
-                        {books
+                        {featuredBooks
                         .filter(book => book.rating === 5)
                         .slice(0, 4)
                         .map(book => 
