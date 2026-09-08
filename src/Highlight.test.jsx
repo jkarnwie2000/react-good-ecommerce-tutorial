@@ -6,13 +6,13 @@ import Highlight from "./components/ui/Highlight";
 test("renders the highlight section", () => {
   render(
     <BrowserRouter>
-      <Highlight />
+      <Highlight title="Why chose Library" />
     </BrowserRouter>
   );
 
   const heading = screen.getByRole("heading", {
     name: /Why chose Library/i,
-    level: 2,
+    level: 3,
   });
 
   expect(heading).toBeInTheDocument();
