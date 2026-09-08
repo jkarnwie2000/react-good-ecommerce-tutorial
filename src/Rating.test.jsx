@@ -1,13 +1,13 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
-import Price from "./components/ui/Price";
+import Rating from "./components/ui/rating";
 
 
 const mockBooks = [
   {
     id: 1,
-    title: "TestSalePrice",
+    title: "TestRating",
     rating: 4,
     originalPrice: 20,
     salePrice: 15,
@@ -15,17 +15,14 @@ const mockBooks = [
   },
 ];
 
-test("find the sale price, and display the information", () => {
+test("find the book rating, and display the information", () => {
   render(
     <MemoryRouter initialEntries={["/books/1"]}>
-      <Price
-        salePrice={mockBooks[0].salePrice}
-        originalPrice={mockBooks[0].originalPrice}
+      <Rating
+        rating={mockBooks[0].rating}
        />
     </MemoryRouter>
   );
 
-  expect(screen.getByText("$15.00")).toBeInTheDocument();
+  expect(screen.getByText("rating: 4")).toBeInTheDocument();
 });
-
-
