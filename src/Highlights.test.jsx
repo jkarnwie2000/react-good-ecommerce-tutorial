@@ -10,6 +10,12 @@ test("renders the highlights section", () => {
     </BrowserRouter>
   );
 
-  const heading = screen.getByRole("why choose library", { level: 1 });
+  const heading = screen.getByRole("heading", {
+    name: /Why chose Library/i,
+    level: 2,
+  });
+
   expect(heading).toBeInTheDocument();
 });
+
+
