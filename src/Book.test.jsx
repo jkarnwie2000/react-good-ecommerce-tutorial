@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
-import Book from "./component/ui/Book";
+import Book from "./components/ui/Book";
 
 
 const mockBooks = [
@@ -14,7 +14,6 @@ const mockBooks = [
     url: "test-image.jpg",
   },
 ];
-
 
 test("find the clickable book, click on it, and display the information", () => {
   render(
