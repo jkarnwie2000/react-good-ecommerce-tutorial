@@ -7,7 +7,7 @@ import Price from "./components/ui/Price";
 const mockBooks = [
   {
     id: 1,
-    title: "Test Price",
+    title: "TestSalePrice",
     rating: 4,
     originalPrice: 20,
     salePrice: 15,
@@ -15,25 +15,21 @@ const mockBooks = [
   },
 ];
 
-test("find the clickable book, click on it, and display the information", () => {
+test("find the sale price, and display the information", () => {
   render(
     <MemoryRouter initialEntries={["/books/1"]}>
       <Routes>
         <Route
           path="/books/:id"
           element={
-            <Price
-              book={mockBooks[0]}
-              cart={[]}
-              addToCart={jest.fn()}
-            />
+            <Price salePrice={mockBooks[0].salePrice} originalPrice={mockBooks[0].originalPrice} />
           }
         />
       </Routes>
     </MemoryRouter>
   );
 
-  expect(screen.getByText("Test Price")).toBeInTheDocument();
+  expect(screen.getByText("TestSalePrice")).toBeInTheDocument();
 });
 
 
