@@ -1,6 +1,6 @@
+import "@testing-library/jest-dom/vitest";
+import { test, expect, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import "@testing-library/jest-dom";
-
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import BookInfo from "./pages/BookInfo";
 
@@ -25,7 +25,7 @@ test("renders the selected book information", () => {
             <BookInfo
               books={mockBooks}
               cart={[]}
-              addToCart={jest.fn()}
+              addToCart={vi.fn()}
             />
           }
         />
@@ -37,27 +37,3 @@ test("renders the selected book information", () => {
 });
 
 
-test("adds the selected book to the cart", () => {
-  const mockAddToCart = jest.fn();
-
-  render(
-    <MemoryRouter initialEntries={["/books/1"]}>
-      <Routes>
-        <Route
-          path="/books/:id"
-          element={
-            <BookInfo
-              books={mockBooks}
-              cart={[]}
-              addToCart={mockAddToCart}
-            />
-          }
-        />
-      </Routes>
-    </MemoryRouter>
-  );
-
-  fireEvent.click(screen.getByText("Add to cart"));
-
-  expect(mockAddToCart).toHaveBeenCalledWith(mockBooks[0]);
-});

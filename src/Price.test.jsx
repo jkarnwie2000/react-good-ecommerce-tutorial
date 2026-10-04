@@ -1,5 +1,7 @@
+import "@testing-library/jest-dom/vitest";
+import { test, expect } from "vitest";
+
 import { render, screen, fireEvent } from "@testing-library/react";
-import "@testing-library/jest-dom";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import Price from "./components/ui/Price";
 

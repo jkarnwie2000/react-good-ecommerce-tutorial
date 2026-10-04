@@ -1,4 +1,5 @@
-import "@testing-library/jest-dom";
+import "@testing-library/jest-dom/vitest";
+import { test, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import Explore from "./components/Explore";

@@ -69,3 +69,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # react-good-ecommerce-tutorial
+
+
+### Completed React Testing Library and Vitest tests: 
+
+This project uses Vitest and React Testing Library, includes component, interaction, and mocked component pages and UIs testing, and these tests confirm mocked user data renders correctly without making a real network request. To run tests, type 'npm test' in the integrated terminal.

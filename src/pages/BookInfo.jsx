@@ -32,6 +32,8 @@ return (
             <h2 className="book__selected--title--top">Books</h2>
             </Link>  
         </div>
+
+
         <div className="book__selected">
             <figure className="book__selected--figure">
                 <img src={book.url} alt="" className="book__selected--img"/>
@@ -61,7 +63,8 @@ return (
                 harum necessitatibus quaerat nulla beatae neque provident!
             </p>
         </div>
-        {bookExistsOnCart() ? (
+        {bookExistsOnCart() ? 
+        (
         <Link to={`/cart`} className="book__link">  
         <button className="btn">Checkout</button>
         </Link>
@@ -73,6 +76,8 @@ return (
         </div>
         </div>
         </div>
+
+
             <div className="books__container">
                 <div className="row">
                     <div className="book__selected--top">

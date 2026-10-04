@@ -1,5 +1,7 @@
+
+import "@testing-library/jest-dom/vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import "@testing-library/jest-dom";
+import { test, expect, vi } from "vitest";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import Discounted from "./components/Discounted";
 
@@ -23,8 +25,8 @@ test("find clickable item, click it, and display the selected book information",
           element={
             <Discounted
               books={mockBooks}
-              // cart={[{ ...mockBooks[0], quantity: 1 }]}
-              // addToCart={jest.fn()}
+              cart={[{ ...mockBooks[0], quantity: 1 }]}
+              addToCart={vi.fn()}
             />
           }
         />

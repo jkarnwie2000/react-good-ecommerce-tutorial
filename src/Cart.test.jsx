@@ -1,5 +1,6 @@
+import "@testing-library/jest-dom/vitest";
+import { test, expect, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import "@testing-library/jest-dom";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import Cart from "./pages/Cart";
 
@@ -25,7 +26,7 @@ test("find the clickable remove button, click on it, and display the information
             <Cart
               books={mockBooks}
               cart={[{...mockBooks[0], quantity: 1 }]}
-              addToCart={jest.fn()}
+              addToCart={vi.fn()}
             />
           }
         />
@@ -35,27 +36,4 @@ test("find the clickable remove button, click on it, and display the information
 
   expect(screen.getByText("Test Cart")).toBeInTheDocument();
 });
-
-
-test("find the clickable proceed to checkout button, click on it, and display the information", () => {
-  render(
-    <MemoryRouter initialEntries={["/cart"]}>
-      <Routes>
-        <Route
-          path="/cart"
-          element={
-            <Cart
-              books={mockBooks}
-              cart={[{...mockBooks[0], quantity: 1 }]}
-              addToCart={jest.fn()}
-            />
-          }
-        />
-      </Routes>
-    </MemoryRouter>
-  );
-
-  expect(screen.getByText("Test Cart")).toBeInTheDocument();
-});
-
 

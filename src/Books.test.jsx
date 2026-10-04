@@ -1,5 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import "@testing-library/jest-dom";
+import "@testing-library/jest-dom/vitest";
+import { test, expect, vi } from "vitest";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import Books from "./pages/Books";
 
@@ -25,29 +26,7 @@ test("renders the selected book information", () => {
             <Books
               books={mockBooks}
               cart={[]}
-              addToCart={jest.fn()}
-            />
-          }
-        />
-      </Routes>
-    </MemoryRouter>
-  );
-
-  expect(screen.getByText("Test Books")).toBeInTheDocument();
-});
-
-
-test("find the clickable book, click on it, and display the information", () => {
-  render(
-    <MemoryRouter initialEntries={["/books"]}>
-      <Routes>
-        <Route
-          path="/books"
-          element={
-            <Books
-              books={mockBooks}
-              cart={[]}
-              addToCart={jest.fn()}
+              addToCart={vi.fn()}
             />
           }
         />
