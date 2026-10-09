@@ -57,7 +57,7 @@ return (
                 harum necessitatibus quaerat nulla beatae neque provident!
             </p>
             <p className="book__summary--para">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                Good thing Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
                 Culpa in amet optio, molestiae, laboriosam esse atque 
                 consequatur perspiciatis ut quo, quam praesentium consequuntur 
                 harum necessitatibus quaerat nulla beatae neque provident!
