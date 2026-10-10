@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import Rating from "./rating";
 import Price from "./Price";
+import { useEffect } from 'react';
 
 const Book = ({ book }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="book">
       <Link to={`/books/${book.id}`}>
